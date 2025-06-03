@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Alert, Button, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import { useEffect, useState } from 'react';
 import _tarefa from './types/tarefa';
@@ -59,9 +59,9 @@ export default function App() {
       <TouchableOpacity onPress={adicionar} style={styles.botao}>
         <Text style={styles.textoBotao}>Adicionar</Text>
       </TouchableOpacity>
-      <View>
+      <ScrollView>
         {renderLista()}
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 350,
     backgroundColor: '#fedcd3',
+    gap: 10,
   },
   
   botao:{
